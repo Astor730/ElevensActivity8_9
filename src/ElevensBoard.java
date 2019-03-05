@@ -27,7 +27,7 @@ public class ElevensBoard extends Board {
      * The values of the cards for this game to be sent to the deck.
      */
     private static final int[] POINT_VALUES =
-            {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
+            {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
     /**
      * Flag used to control debugging print statements.
@@ -52,8 +52,23 @@ public class ElevensBoard extends Board {
      *         false otherwise.
      */
     @Override
-    public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+    public boolean isLegal(List<Integer> selectedCards)
+    {
+		if(selectedCards.size()>3|| selectedCards.size()<2)
+        {
+            return false;
+        }
+        if(selectedCards.size()== 3)
+        {
+            if((selectedCards[0]+selectedCards[1]+selectedCards[2])== 36)
+            {
+                return true;
+            }
+        }
+        if(selectedCards.size()==2)
+        {
+            //code for pair
+        }
         return true;
     }
 
