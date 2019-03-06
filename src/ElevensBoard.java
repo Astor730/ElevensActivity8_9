@@ -60,16 +60,24 @@ public class ElevensBoard extends Board {
         }
         if(selectedCards.size()== 3)
         {
-            if((selectedCards[0]+selectedCards[1]+selectedCards[2])== 36)
+            Card card1 = cardAt(selectedCards.get(0));
+            Card card2 = cardAt(selectedCards.get(1));
+            Card card3 = cardAt(selectedCards.get(2));
+            if(card1.pointValue()+card2.pointValue()+card3.pointValue()== 36)
             {
                 return true;
             }
         }
         if(selectedCards.size()==2)
         {
-            //code for pair
+            Card card1 = cardAt(selectedCards.get(0));
+            Card card2 = cardAt(selectedCards.get(1));
+            if(card1.pointValue()+card2.pointValue()==11)
+            {
+                return true;
+            }
         }
-        return true;
+       return false;
     }
 
     /**
